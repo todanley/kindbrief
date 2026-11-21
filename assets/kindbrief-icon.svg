@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="Kindbrief">
+  <rect width="64" height="64" rx="14" fill="#214036"/>
+  <!-- brief card -->
+  <path fill="#f4efe6" d="M20 12h18l10 10v30a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z"/>
+  <!-- dog-ear fold -->
+  <path fill="#d8d0c4" d="M38 12v8a2 2 0 0 0 2 2h8L38 12z"/>
+  <!-- brief lines -->
+  <rect x="22" y="30" width="16" height="2.6" rx="1.3" fill="#214036"/>
+  <rect x="22" y="36.5" width="20" height="2.6" rx="1.3" fill="#214036"/>
+  <rect x="22" y="43" width="12" height="2.6" rx="1.3" fill="#214036"/>
+</svg>
