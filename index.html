@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kindbrief — fixed-price remote work</title>
+  <meta name="description" content="A small studio for fixed-price remote jobs: product listings, process write-ups, bilingual subtitles, written code reviews, and App Store listing copy.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://todanley.github.io/kindbrief/">
+  <style>
+    :root {
+      --ink: #1c1916;
+      --muted: #5c564e;
+      --line: #d8d0c4;
+      --paper: #f4efe6;
+      --card: #fffdf8;
+      --accent: #6b2d1a;
+      --accent-2: #214036;
+      --focus: #1c1916;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    header, main, footer { width: min(44rem, calc(100% - 2rem)); margin-left: auto; margin-right: auto; }
+    header { padding: 2rem 0 1.25rem; border-bottom: 1px solid var(--line); }
+    .brand { font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif; font-size: 1.35rem; letter-spacing: 0.01em; }
+    .brand a { color: inherit; text-decoration: none; }
+    nav { margin-top: 0.7rem; font-size: 0.92rem; }
+    nav a { color: var(--accent-2); margin-right: 1rem; }
+    h1, h2, h3, .brand {
+      font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    h1 { font-size: 2.15rem; margin: 1.6rem 0 0.7rem; }
+    h2 { font-size: 1.5rem; margin: 2.4rem 0 0.8rem; }
+    h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
+    p { margin: 0.7rem 0; }
+    .lede { font-size: 1.15rem; max-width: 38rem; }
+    .credit {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      padding: 0.9rem 1rem;
+      margin: 1.4rem 0;
+    }
+    .packages { display: grid; gap: 1rem; margin: 1.2rem 0 0.5rem; }
+    article.pkg {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 1.05rem 1.1rem 0.95rem;
+    }
+    .price { font-weight: 600; color: var(--accent-2); margin: 0.15rem 0 0.55rem; }
+    .pkg ul { margin: 0.4rem 0 0.6rem; padding-left: 1.15rem; }
+    .pkg li { margin: 0.2rem 0; }
+    .note, .src, .fine, footer { color: var(--muted); font-size: 0.92rem; }
+    .src a, .pkg a, main a { color: var(--accent-2); }
+    ol.steps { padding-left: 1.2rem; }
+    ol.steps li { margin: 0.45rem 0; }
+    .faq details { border-top: 1px solid var(--line); padding: 0.7rem 0; }
+    .faq details:last-child { border-bottom: 1px solid var(--line); }
+    .faq summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+    .faq details p { margin: 0.45rem 0 0.2rem; }
+    form {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 1.1rem 1.15rem 1.2rem;
+      margin: 1rem 0 2rem;
+    }
+    label { display: block; font-weight: 600; margin: 0.85rem 0 0.3rem; }
+    .hint { font-weight: 400; color: var(--muted); font-size: 0.9rem; }
+    input, select, textarea {
+      width: 100%;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #b7b0a5;
+      border-radius: 2px;
+      padding: 0.5rem 0.55rem;
+    }
+    textarea { min-height: 9rem; resize: vertical; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+    .hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    button[type="submit"] {
+      margin-top: 1.1rem;
+      font: inherit;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent-2);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { filter: brightness(1.08); }
+    button[type="submit"]:focus { outline: 2px solid var(--focus); outline-offset: 2px; }
+    footer { padding: 2rem 0 2.6rem; border-top: 1px solid var(--line); margin-top: 1rem; }
+    footer p { margin: 0.4rem 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="#top">Kindbrief</a></div>
+    <nav aria-label="On this page">
+      <a href="#packages">Packages</a>
+      <a href="#how">How it works</a>
+      <a href="#request">Request a job</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+  <main id="top">
+    <h1>Fixed-price remote work</h1>
+    <p class="lede">Send the brief. A small studio will reply with a price and a written scope, or tell you we can’t take it.</p>
+    <p>Kindbrief handles a short list of remote jobs: product listings, process write-ups from a screen recording, bilingual subtitles, written code reviews, and App Store listing copy. We are not a bidding board, and we don’t keep a public list of freelancers.</p>
+    <p>If the job fits a package below, the price is already set. If it doesn’t, describe it anyway. We’ll say whether we can do it, and at what price, before any work starts.</p>
+
+    <div class="credit">
+      <strong>First-order credit: A$20 off.</strong>
+      Your first paid order of A$40 or more gets A$20 off. One credit per customer. We’ll honour it, and we’ll show it on the quote. It isn’t cash and you can’t transfer it.
+    </div>
+
+    <h2 id="packages">Packages</h2>
+    <p class="note">Prices are in Australian dollars. US dollar figures are approximate equivalents on our standing grid (A$20 = US$15, A$40 = US$25), not a live exchange rate. Where we compare a price with another published listing, the source is linked. None of these packages is one-tenth of the cited price.</p>
+
+    <div class="packages">
+      <article class="pkg" id="listing">
+        <h3>English product listing</h3>
+        <p class="price">A$20 (about US$15) · 2 business days · 1 revision</p>
+        <p>One product, for Amazon or Shopify. You get a title, five bullet points, a product description, and backend search terms or tag suggestions.</p>
+        <ul>
+          <li>Included: one English listing, written from the facts you provide.</li>
+          <li>Not included: photography, A+ module design, account access, ads, or any promise of rank or sales.</li>
+        </ul>
+        <p class="src">On 22 November 2026, a Fiverr starter package for an Amazon listing (title, five bullets, description) was listed at US$24.60, fees included. Ours is about 39% under that listing. Source: <a href="https://www.fiverr.com/arfahussain913/write-amazon-listing-optimization-and-seo-amazon-description">Arfa H on Fiverr</a>.</p>
+      </article>
+
+      <article class="pkg" id="sop">
+        <h3>Process write-up from a screen recording</h3>
+        <p class="price">A$40 (about US$25) · 3 business days · 2 revisions</p>
+        <p>One recording, up to 15 minutes. You get a step-by-step procedure a new team member can follow, with screenshots from the video, a short “done” checklist, and notes on any unclear parts. Delivered as a Google Doc or a Word file.</p>
+        <ul>
+          <li>Included: one process, from one Loom, Zoom, or similar screen recording (or a voice note of the same length).</li>
+          <li>Not included: legal, medical, or safety-critical procedures; recordings that contain passwords or payment details; more than one process in this price.</li>
+        </ul>
+        <p class="src">GoodAiDeas lists a similar job — one SOP from a screen recording up to 20 minutes, with screenshots and one revision — at a fixed US$79. Ours is 15 minutes rather than 20, at about US$25, which is about 68% under that published price (roughly one-third of it, not one-tenth). Source: <a href="https://goodaideas.com/revenue-lab/loom-to-sop/">Convert a Loom Video to an SOP, GoodAiDeas</a>.</p>
+      </article>
+
+      <article class="pkg" id="subtitles">
+        <h3>Bilingual subtitles, English plus Chinese</h3>
+        <p class="price">A$40 (about US$25) per 10 minutes of video · 3 business days · 2 revisions</p>
+        <p>English captions, timed, plus a Simplified or Traditional Chinese translation on the same timeline. You get SRT and VTT files. Videos shorter than 10 minutes are charged as 10 minutes; longer videos add another 10-minute block.</p>
+        <ul>
+          <li>Included: one video you own or have the right to use; one Chinese variety (Simplified, or Traditional for Taiwan).</li>
+          <li>Not included: voice-over, burned-in design work, certified legal or medical translation, or files you don’t have rights to.</li>
+        </ul>
+        <p class="src">A Chinese translation firm’s guide (14 August 2025) says to budget US$100–200 for a 10-minute YouTube video with full Chinese subtitling. Our US$25 is 75% under the low end of that range (one-quarter of it, not one-tenth). That figure is an agency budget, not a cheap English-only caption gig, which can be lower. Source: <a href="https://chinesetranslationservices.com/how-much-does-chinese-video-subtitling-cost/">How Much Does Chinese Video Subtitling Cost?</a>.</p>
+      </article>
+
+      <article class="pkg" id="review">
+        <h3>Written code review</h3>
+        <p class="price">A$40 (about US$25) · 3 business days · 2 written follow-ups</p>
+        <p>A written review of a personal repository or a practice take-home, up to about 1,000 lines. You get findings on readability, likely bugs, tests, and structure, with suggestions in priority order. We can also note how you might talk about the project in an interview.</p>
+        <ul>
+          <li>Included: a written review. Languages we already take: Python, JavaScript/TypeScript, common web projects, and iOS/Swift. Other languages are possible if we see a sample first.</li>
+          <li>Not included: rewriting the project, opening a pull request, or writing, completing, or submitting coursework, exams, or hiring take-home tests. If it is assessed work, you change and submit the code yourself.</li>
+        </ul>
+        <p class="src">An Upwork Project Catalog starter titled “Code Review and code audit” (described on the page as a “Simple App Review”) was listed at US$100 on 22 November 2026. Ours is about US$25 for up to about 1,000 lines, which is 75% under that starter price (one-quarter of it, not one-tenth). The scopes are not identical; we cap the size. Source: <a href="https://www.upwork.com/services/product/development-it-code-review-and-code-audit-2102414660369572672">Hakim F., Upwork Project Catalog</a>.</p>
+      </article>
+
+      <article class="pkg" id="appstore">
+        <h3>App Store or Play Store listing, English plus Chinese</h3>
+        <p class="price">A$40 (about US$25) · 3 business days · 2 revisions</p>
+        <p>Listing copy for one app, in English and in one Chinese locale (Simplified, or Traditional for Taiwan or Hong Kong). You get a title, subtitle or short description, long description, and a keyword field, written for that store.</p>
+        <ul>
+          <li>Included: two language versions of the listing text, from your current copy and the facts you provide.</li>
+          <li>Not included: new screenshots, icon design, account access, ads, or any promise of search rank or downloads.</li>
+        </ul>
+        <p class="src">LocalizeRank’s June 2026 cost guide puts quality freelance App Store localization at US$50–100 per market, and translation-only Fiverr gigs at US$15–50. Our US$25 for English plus one Chinese locale is half the floor of that quality band, and inside the translation-only band. We don’t claim this is one-tenth of typical rates. Source: <a href="https://www.localizerank.com/blog/app-store-localization-cost">App Store Localization Cost 2026, LocalizeRank</a>.</p>
+      </article>
+    </div>
+    <p>Jobs that don’t fit a package can still be sent through the form. We’ll reply with a fixed quote, or we’ll decline.</p>
+
+    <h2 id="how">How it works</h2>
+    <ol class="steps">
+      <li>Send the form. Pick a package or describe the job, and include a deadline if you have one.</li>
+      <li>We reply by email with a written scope and a fixed price, or we decline. There is no fee for a declined request.</li>
+      <li>If you accept, you pay the quoted amount. The first-order credit is taken off at this point when it applies. Then we do the work and send it back.</li>
+    </ol>
+    <p>Payment is by card, through a payment link we send after you accept the quote. If that link isn’t ready yet, we’ll say so in the reply and we won’t ask you to pay until it is.</p>
+
+    <h2 id="request">Request a job</h2>
+    <form action="https://formsubmit.co/stanleyjin32-xvmvnp+kindbrief@mail.grokbot.com" method="POST">
+      <input type="hidden" name="_subject" value="Kindbrief job request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://todanley.github.io/kindbrief/thanks.html">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+
+      <label for="name">Name <span class="hint">(optional)</span></label>
+      <input type="text" id="name" name="name" autocomplete="name">
+
+      <label for="email">Work email</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+      <input type="hidden" name="_replyto" value="">
+
+      <label for="package">Package</label>
+      <select id="package" name="package" required>
+        <option value="" selected disabled>Choose one</option>
+        <option value="English product listing (A$20)">English product listing (A$20)</option>
+        <option value="Process write-up from a screen recording (A$40)">Process write-up from a screen recording (A$40)</option>
+        <option value="Bilingual subtitles (A$40 per 10 minutes)">Bilingual subtitles (A$40 per 10 minutes)</option>
+        <option value="Written code review (A$40)">Written code review (A$40)</option>
+        <option value="App Store or Play Store listing, English plus Chinese (A$40)">App Store or Play Store listing, English plus Chinese (A$40)</option>
+        <option value="Something else — please quote">Something else — please quote</option>
+      </select>
+
+      <label for="deadline">Deadline <span class="hint">(optional)</span></label>
+      <input type="text" id="deadline" name="deadline" placeholder="e.g. 4 December 2026, or ‘no set date’">
+
+      <label for="budget">Budget range <span class="hint">(optional)</span></label>
+      <input type="text" id="budget" name="budget" placeholder="Only if this isn’t a listed package">
+
+      <label for="brief">The brief</label>
+      <textarea id="brief" name="brief" required placeholder="What you need, any links or files you’ll send next, and anything we should avoid."></textarea>
+
+      <p class="fine">By sending this form you agree we may email you about this request. We don’t sell your details. Don’t put passwords or card numbers in the form.</p>
+      <button type="submit">Send the request</button>
+    </form>
+
+    <h2 id="faq">FAQ</h2>
+    <div class="faq">
+      <details>
+        <summary>Who does the work?</summary>
+        <p>A small studio. We are not a marketplace with a bench of named freelancers. If we need a contractor for part of a job, the quote and the delivery still come from us.</p>
+      </details>
+      <details>
+        <summary>Do you have reviews on this site?</summary>
+        <p>Not yet. We won’t invent reviews, ratings, or client stories.</p>
+      </details>
+      <details>
+        <summary>How does the A$20 credit work?</summary>
+        <p>It applies to your first paid order of A$40 or more, once, for one customer. We’ll show it on the quote. It doesn’t apply to the A$20 product-listing package on its own, because that job is already A$20. It isn’t cash, and you can’t transfer it to someone else.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>After you accept a written quote, we send a card payment link for that amount. We don’t take payment before the scope is agreed. If our payment account is still being set up, we’ll tell you in the reply rather than invent another method.</p>
+      </details>
+      <details>
+        <summary>What won’t you take?</summary>
+        <p>In-person local tasks. Writing, completing, or submitting schoolwork, exams, or hiring take-home tests. Videos you don’t have the right to use. Promises of sales, search rank, or app-store placement. Overnight staffing, or a public directory of freelancers.</p>
+      </details>
+      <details>
+        <summary>What currency are the prices in?</summary>
+        <p>Australian dollars. We are not GST-registered, so GST is not added. US dollar amounts are approximate equivalents, not a live conversion.</p>
+      </details>
+      <details>
+        <summary>How do I contact you?</summary>
+        <p>Use the form on this page. We don’t publish a phone number.</p>
+      </details>
+    </div>
+  </main>
+  <footer>
+    <p>Kindbrief is a trading name of Z1 NEXUS, ABN 81 685 156 914, Australia.</p>
+    <p>Prices are in AUD. We are not GST-registered, so GST is not added. This site does not display reviews we have not received from real clients.</p>
+    <p>© 2026 Z1 NEXUS. Use the form above to reach us.</p>
+  </footer>
+  <script>
+    (function () {
+      var email = document.getElementById("email");
+      var reply = document.querySelector("input[name='_replyto']");
+      if (!email || !reply) return;
+      function sync() { reply.value = email.value; }
+      email.addEventListener("input", sync);
+      sync();
+    })();
+  </script>
+</body>
+</html>
